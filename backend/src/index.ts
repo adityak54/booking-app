@@ -39,7 +39,7 @@ server.use(express.static(path.join(__dirname,"../../frontend/dist")))
 server.use('/api/auth',authRoutes);
 server.use('/api/users', userRoutes);
 server.use('/api/my-hotels',myHotelRoutes);
-server.get("/api/test", async (req, res) => {
+server.get("/api/test", async (req:Request, res:Response) => {
     res.json({ message: "Hello from endpoint!" });
 });
 
