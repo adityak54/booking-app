@@ -27,11 +27,11 @@ const server = express();
 
 // Middlewares
 server.use(cookieParser());
+server.use(express.json());
 server.use(cors({
     origin: process.env.FRONTEND_URL,
     credentials: true
   }));
-server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 server.use(express.static(path.join(__dirname,"../../frontend/dist")))

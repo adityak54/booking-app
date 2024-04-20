@@ -18,7 +18,7 @@ router.post('/login',[
     try {
         const user = await User.findOne({email})
         if(!user) return res.status(400).json({message:"User does not exists"})
-        const isMatch = bcrypt.compare(password,user.password)
+        const isMatch = await bcrypt.compare(password,user.password)
         if(!isMatch) return res.status(400).json({message: "Password is incorrect"});
         const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET_KEY as string,{expiresIn:"1d"})
 
@@ -44,4 +44,4 @@ router.post("/logout",(req:Request,res:Response)=>{
     })
     res.send();
 })
-export default router
+export default router;

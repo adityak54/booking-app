@@ -49,6 +49,7 @@ export const signIn = async (formData: SignInFormData) => {
   const body = await response.json();
   if (!response.ok) {
     throw new Error(body.message);
+    return;
   }
   return body;
 };
