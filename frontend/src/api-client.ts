@@ -1,5 +1,6 @@
 import { RegisterFormData } from "./pages/Register";
 import { SignInFormData } from "./pages/SignIn";
+import {HotelType} from "../../backend/src/shared/types"
 // import {
 //   HotelSearchResponse,
 //   HotelType,
@@ -91,17 +92,17 @@ export const addMyHotel = async (hotelFormData: FormData) => {
   return response.json();
 };
 
-// export const fetchMyHotels = async (): Promise<HotelType[]> => {
-//   const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
-//     credentials: "include",
-//   });
+export const fetchMyHotels = async (): Promise<HotelType[]> => {
+  const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+    credentials: "include",
+  });
 
-//   if (!response.ok) {
-//     throw new Error("Error fetching hotels");
-//   }
+  if (!response.ok) {
+    throw new Error("Error fetching hotels");
+  }
 
-//   return response.json();
-// };
+  return response.json();
+};
 
 // export const fetchMyHotelById = async (hotelId: string): Promise<HotelType> => {
 //   const response = await fetch(`${API_BASE_URL}/api/my-hotels/${hotelId}`, {
