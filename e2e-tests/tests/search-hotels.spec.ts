@@ -28,17 +28,17 @@ test("should show hotel search results", async ({ page }) => {
   await expect(page.getByText("Silver")).toBeVisible();
 });
 
-// test("should show hotel detail", async ({ page }) => {
-//   await page.goto(UI_URL);
+test("should show hotel detail", async ({ page }) => {
+  await page.goto(UI_URL);
 
-//   await page.getByPlaceholder("Where are you going?").fill("Prayagraj");
-//   await page.getByRole("button", { name: "Search" }).click();
+  await page.getByPlaceholder("Where are you going?").fill("Prayagraj");
+  await page.getByRole("button", { name: "Search" }).click();
 
-//   await page.getByText("Silver").click();
-//   await expect(page).toHaveURL(/detail/);
-//   await expect(page.getByRole("button", { name: "Book now" })).toBeVisible();
-// });
-
+  await page.getByText("Silver").click();
+  await expect(page).toHaveURL(/detail/);
+  await expect(page.getByRole("button", { name: "Book now" })).toBeVisible();
+});
+ 
 // test("should book hotel", async ({ page }) => {
 //   await page.goto(UI_URL);
 
