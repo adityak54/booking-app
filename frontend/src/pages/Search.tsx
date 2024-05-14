@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { useSearchContext } from "../contexts/SearchContext";
 import * as apiClient from "../api-client";
 import { useState } from "react";
-import SearchResultsCard from "../components/SearchResultsCard"
+import SearchResultsCard from "../components/SearchResultsCard";
 import Pagination from "../components/Pagination";
 import StarRatingFilter from "../components/StarRatingFilter";
 import HotelTypesFilter from "../components/HotelTypesFilter";
@@ -75,22 +75,22 @@ const Search = () => {
           <h3 className="text-lg font-semibold border-b border-slate-300 pb-5">
             Filter by:
           </h3>
-           <StarRatingFilter
+          <StarRatingFilter
             selectedStars={selectedStars}
             onChange={handleStarsChange}
-            />
+          />
           <HotelTypesFilter
             selectedHotelTypes={selectedHotelTypes}
             onChange={handleHotelTypeChange}
-            />
+          />
           <FacilitiesFilter
             selectedFacilities={selectedFacilities}
             onChange={handleFacilityChange}
-            />
+          />
           <PriceFilter
             selectedPrice={selectedPrice}
             onChange={(value?: number) => setSelectedPrice(value)}
-          /> 
+          />
         </div>
       </div>
       <div className="flex flex-col gap-5">

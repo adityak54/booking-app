@@ -17,7 +17,12 @@ const Register = () => {
   const navigate = useNavigate();
   const { showToast } = useAppContext();
 
-  const {register,watch,handleSubmit,formState: { errors }} = useForm<RegisterFormData>();
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormData>();
 
   const mutation = useMutation(apiClient.register, {
     onSuccess: async () => {
@@ -27,7 +32,6 @@ const Register = () => {
     },
     onError: (error: Error) => {
       showToast({ message: error.message, type: "ERROR" });
-      // console.log(error.message)
     },
   });
 
